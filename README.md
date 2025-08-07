@@ -28,13 +28,6 @@ A responsive webpage that displays a gallery of user avatars with interactive an
 - 🎨 **Color-coded Styles:** Each character bio uses unique color classes (e.g., `.blue-bold`, `.pink-italic`)
 - 📎 **External Profile Links** inside modals to explore each character
 
-## 📸 Demo
-
-🔗 [Live Demo on GitHub Pages](https://your-username.github.io/animated-avatar-gallery)
-
-🎥 **[Watch the Demo Video](demo_video.mp4)**  
-> _Replace this with actual YouTube or Drive link once uploaded_
-
 ## 📁 File Structure
 📦 animated-avatar-gallery/
 ┣ 📂 images/
