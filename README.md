@@ -29,6 +29,7 @@ A responsive webpage that displays a gallery of user avatars with interactive an
 - 📎 **External Profile Links** inside modals to explore each character
 
 ## 📸 Demo
+🔗 Live Demo: [Visit Website]([https://lnkd.in/gDxcmNjn](https://rajkumar345.github.io/animated-avatar-gallery/))
 https://github.com/user-attachments/assets/83610b06-ddda-4552-94af-3108dad93724
 
 ## 📁 File Structure
