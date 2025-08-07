@@ -1,0 +1,285 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Viewport height */
+  font-family: 'Segoe UI', sans-serif;
+  background: url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Metal Mania', sans-serif;
+  font-size: clamp(5rem, 6vw, 4rem);
+  color: #e0f7fa; /* pale blue */
+  background: linear-gradient(to right, skyblue, lightpink, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 30px;
+}
+
+/* Avatar Gallery Styling */
+.avatar-gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin: 50px 30px;
+}
+
+.avatar {
+  padding: 20px;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.65); /* Transparent black */
+  box-shadow: 0 0 25px #9b5de5, 0 0 40px #f15bb5;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 240px;
+}
+
+.avatar:hover {
+  transform: translateY(-10px);
+}
+
+.name {
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.5em;
+  margin-bottom: 15px;
+  background: linear-gradient(90deg, #ffb8e6, #c6e2ff, #f3d1ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitter 6s linear infinite;
+  text-align: center;
+}
+
+.avatar-gallery img {
+  background: linear-gradient(to bottom, #ffffff, #f8faff, #ffe9f9);
+  width: auto;
+  height: 260px;
+  border-radius: 20px;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+.avatar-gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 40px #ff6ec4, 0 0 60px #4adede;
+  cursor: pointer;
+}
+
+@keyframes glitter {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.name, .glitter-text {
+  font-family: 'Metal Mania', cursive;
+  font-size: 1.5em;
+  background: linear-gradient(270deg, #ffb8e6, #c6e2ff, #f3d1ff, #ffb8e6);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glitter 3s ease-in-out infinite;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.name, .glitter-text {
+  text-shadow: 0 0 15px #fff, 0 0 25px #f0c;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Enhanced Modal Avatar Styling */
+.modal-content img {
+  --b: 5px; /* Border thickness */
+
+  width: 180px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 50px #ff6ec4, 0 0 50px #4adede; /* we'll handle border below */
+  padding: 5px;
+
+  /* New fancy gradient border and pale background */
+  background:
+    linear-gradient(to bottom, #ffffff, #f8faff, #ffe9f9) padding-box,
+    linear-gradient(135deg, #f15bb5, #9b5de5, #00bbf9) border-box;
+
+  border: var(--b) solid transparent;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+
+  animation: bounce 3s ease-in-out infinite;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.modal-content img:hover {
+  transform: scale(1.08);
+}
+
+
+.modal-content h2 {
+  font-family: 'Metal Mania', cursive;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 2em;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.8);}
+  to {opacity: 1; transform: scale(1);}
+}
+
+.pink-bold {
+  font-weight: bold;
+  color: #ff69b4;
+}
+
+.highlight-blue {
+  background-color: #add8e6;
+  color: #000;
+}
+
+.pink-italic {
+  font-weight: bold;
+  font-style: italic;
+  color: #ff69b4; /* Hot pink */
+}
+
+.blue-italic {
+  font-weight: bold;
+  font-style: italic;
+  color: #87CEFA; /* Bootstrap blue / vivid blue */
+}
+
+.blue-bold {
+  font-weight: bold;
+  color: #87CEFA; /* Bootstrap blue / vivid blue */
+}
+
+.Orchid-italic {
+  font-weight: bold;
+  font-style: italic;
+  color: #BA55D3; /* Thistle (light purple) */
+}
+
+.Orchid-bold {
+  font-weight: bold;
+  color: #BA55D3; /* Thistle (light purple) */
+}
+
+.deeplavender-italic {
+  font-weight: bold;
+  font-style: italic;
+  color: #846CA6; /* Lavender */
+}
+
+.deeplavender-bold {
+  font-weight: bold;
+  color: #846CA6; /* Lavender */
+}
+
+.profile-link {
+  font-size: 0.9em;
+  color: #87CEFA;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+.profile-link:hover {
+  color: #ff69b4;
+}
+
+.site-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  font-family: 'Metal Mania', cursive;
+  color: #ff69b4;
+  background-color: #f0f0f0;
+  font-size: 1.2em;
+  border-top: 2px dashed pink;
+}
+
+/* Make the page take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let main take all available space */
+main {
+  flex: 1;
+}
+
+/* Footer styling */
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  font-family: 'Metal Mania', cursive;
+  color: #ff69b4;
+  background-color: #0b0707;
+  font-size: 1.2em;
+  border-top: 2px dashed pink;
+}

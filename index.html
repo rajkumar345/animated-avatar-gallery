@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>K-POP Avatar Gallery</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <h1 class="glitter-text">K-POP Demon Hunters: Avatar Gallery</h1>
+
+
+    <div class="avatar-gallery">
+      <div class="avatar" data-character="rumi">
+        <div class="name">Rumi</div>
+        <img src="images/rumi.jpg" alt="Rumi" />
+      </div>
+      <div class="avatar" data-character="mira">
+        <div class="name">Mira</div>
+        <img src="images/mira.jpg" alt="Mira" />
+      </div>
+      <div class="avatar" data-character="zoey">
+        <div class="name">Zoey</div>
+        <img src="images/zoey.jpg" alt="Zoey" />
+      </div>
+    </div>
+    
+    <!-- Character Info Modal -->
+     <div class="modal" id="characterModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <img id="modalAvatar" src="" alt="Character Avatar">
+        <h2 id="modalName"></h2>
+        <p id="modalDescription"></p>
+      </div>
+    </div>
+    
+    <script>
+    const characterInfo = {
+      rumi: {
+        name: "Rumi",
+        img: "modalAvatar/rumi.jpg",
+        desc: `
+        <b><span class='blue-italic'>Rumi</span></b> (full name likely <b><span class='blue-bold'>Ryu Rumi</span></b>) is the protagonist of 
+        <span class='pink-bold'>KPop Demon Hunters</span>. She is the leader and main vocalist of the famous K-Pop girl group 
+        <span class='pink-italic'>HUNTR/X</span>, which also consists of her friends <span class='pink-bold'>Mira</span> and 
+        <span class='pink-bold'>Zoey</span>. She is a charismatic idol in the spotlight and a fierce fighter on the battlefield, 
+        Rumi and her groupmates assume secret identities as demon hunters to protect humanity. She is voiced by 
+        <span class='pink-italic'>Arden Cho</span>, her singing voice is provided by <span class='pink-bold'>EJAE</span>, and her 
+        younger self is voiced by <span class='pink-italic'>Rumi Oak</span>.
+
+        <br><br>🌐 
+        <a href="https://kpop-demon-hunters.fandom.com/wiki/Rumi" target="_blank" class="profile-link">
+          Visit Profile
+        </a>
+      `
+    },
+    mira: {
+      name: "Mira",
+      img: "modalAvatar/mira.jpg", // Replace with actual image path
+      desc: `
+      <span class='pink-italic'>Mira</span> is one of the two deuteragonists (alongside 
+      <span class='blue-bold'>Zoey</span>) of <span class='blue-bold'>Sony Pictures Animation</span>'s 29th full-length 
+      animated feature film <span class='blue-bold'>KPop Demon Hunters</span>. She is the choreographer of the group 
+      Huntrix, comprising of herself, Rumi, and Zoey. They assume confidential identities as demon hunters to safeguard 
+      the humans from demons. She is voiced by <span class='blue-italic'>May Hong</span>.
+
+      <br><br>🌐 
+      <a href="https://kpop-demon-hunters.fandom.com/wiki/Mira" target="_blank" class="profile-link">
+        Visit Profile
+      </a>
+    `
+    },
+    zoey: {
+      name: "Zoey",
+      img: "modalAvatar/zoey.jpg", // Replace with actual image path
+      desc: `
+      <span class='Orchid-italic'>Zoey</span> is one of the two deuteragonists (alongside 
+      <span class='pink-bold'>Mira</span>) of <span class='pink-bold'>Sony Pictures Animation</span>'s 29th full-length 
+      animated feature film <span class='pink-bold'>KPop Demon Hunters</span>. She is the lyricist of the KPop group 
+      Huntrix, comprising herself, Rumi, and Mira. They assume undisclosed identities as demon hunters to preserve 
+      people from demons. She is voiced by <span class='pink-italic'>Ji-young Yoo</span> when she's speaking, and 
+      voiced by <span class='pink-italic'>Rei Ami</span> when she's singing.
+
+      <br><br>🌐 
+      <a href="https://kpop-demon-hunters.fandom.com/wiki/Zoey" target="_blank" class="profile-link">
+        Visit Profile
+      </a>
+    `
+    }
+  };
+
+  // When avatar is clicked
+  document.querySelectorAll('.avatar').forEach(avatar => {
+    avatar.addEventListener('click', () => {
+      const id = avatar.dataset.character;
+      const info = characterInfo[id];
+      if (info) {
+        document.getElementById('modalAvatar').src = info.img;
+        document.getElementById('modalName').textContent = info.name;
+        document.getElementById('modalDescription').innerHTML = info.desc;
+        document.getElementById('characterModal').style.display = 'flex';
+      }
+    });
+  });
+
+  // Close button
+  document.querySelector('.close').onclick = () => {
+    document.getElementById('characterModal').style.display = 'none';
+  };
+
+  // Click outside the modal to close
+  window.onclick = e => {
+    if (e.target === document.getElementById('characterModal')) {
+      document.getElementById('characterModal').style.display = 'none';
+    }
+  };
+  </script>
+</main>
+
+<footer class="site-footer">
+    <p>✨ Done by Mrudula ✨</p>
+  </footer>
+  
+</body>
+</html>
